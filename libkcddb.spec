@@ -1,12 +1,12 @@
 Name:		libkcddb
 Summary:	KDE4 library for retrieving and sending CDDB information
-Version:	4.8.95
-Release:	1
+Version: 4.9.0
+Release: 1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://projects.kde.org/projects/kde/kdemultimedia/libkcddb
-Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/%{name}-%{version}.tar.xz
+Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(libmusicbrainz5)
 Conflicts:	%{_lib}kcddb4 < 3:4.8.95
