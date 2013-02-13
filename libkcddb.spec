@@ -19,7 +19,6 @@ KDE4 library for retrieving and sending CDDB information.
 %{_kde_datadir}/config.kcfg/libkcddb.kcfg
 %{_kde_services}/libkcddb.desktop
 %{_kde_docdir}/HTML/en/kcontrol/cddbretrieval
-%{_kde_appsdir}/kconf_update/kcmcddb-emailsettings.upd
 %{_kde_libdir}/kde4/kcm_cddb.so
 
 #------------------------------------------------------------------------------
@@ -71,6 +70,7 @@ based on libkcddb.
 %changelog
 * Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.0-1
 - New version 4.10.0
+- Update files
 
 * Wed Dec 05 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.9.4-1
 - New version 4.9.4
