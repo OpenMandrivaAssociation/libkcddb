@@ -1,14 +1,12 @@
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-
 Name:		libkcddb
 Summary:	KDE4 library for retrieving and sending CDDB information
-Version:	14.12.0
+Version:	4.14.3
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://projects.kde.org/projects/kde/kdemultimedia/libkcddb
-Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/%{version}/src/%{name}-%{version}.tar.xz
+Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(libmusicbrainz5)
 Conflicts:	%{_lib}kcddb4 < 3:4.8.95
@@ -70,8 +68,8 @@ based on libkcddb.
 %makeinstall_std -C build
 
 %changelog
-* Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:14.12.0-1
-- New version 14.12.0
+* Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.14.3-1
+- New version 4.14.3
 
 * Wed Oct 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.14.2-1
 - New version 4.14.2
