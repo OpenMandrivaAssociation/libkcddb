@@ -2,8 +2,8 @@
 
 Name:		libkcddb
 Summary:	KDE4 library for retrieving and sending CDDB information
-Version:	15.04.3
-Release:	2
+Version:	15.08.0
+Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2
@@ -63,7 +63,8 @@ based on libkcddb.
 %setup -q
 
 %build
-%cmake_kde4
+%cmake_kde4 \
+	-DCMAKE_MINIMUM_REQUIRED_VERSION=3.1
 %make
 
 %install
