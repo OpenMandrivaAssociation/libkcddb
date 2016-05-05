@@ -20,7 +20,7 @@ KDE4 library for retrieving and sending CDDB information.
 %files
 %{_datadir}/config.kcfg/libkcddb.kcfg                                                                  
 %{_datadir}/kde4/services/libkcddb.desktop                                                            
-%doc %{_docdir}/HTML/en/kcontrol/cddbretrieval                                                         
+%doc %{_docdir}/HTML/en/kcontrol/cddbretrieval4
 %{_libdir}/kde4/kcm_cddb.so  
 
 #------------------------------------------------------------------------------
@@ -61,6 +61,8 @@ based on libkcddb.
 
 %prep
 %setup -q
+# fix doc clash with kcddb5
+sed -i 's/cddbretrieval/cddbretrieval4/' kcmcddb/libkcddb.desktop kcmcddb/doc/CMakeLists.txt
 
 %build
 %cmake_kde4 \
