@@ -9,34 +9,36 @@ Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://projects.kde.org/projects/kde/kdemultimedia/libkcddb
 Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kdelibs4-devel
+BuildRequires:  cmake
+BuildRequires:  cmake(ECM)
+BuildRequires:  cmake(Qt5Network)
+BuildRequires:  cmake(Qt5Widgets)
+BuildRequires:  cmake(Qt5Test)
+BuildRequires:  cmake(KF5Config)
+BuildRequires:  cmake(KF5DocTools)
+BuildRequires:  cmake(KF5Codecs)
+BuildRequires:  cmake(KF5I18n)
+BuildRequires:  cmake(KF5KIO)
+BuildRequires:  cmake(KF5WidgetsAddons)
 BuildRequires:	pkgconfig(libmusicbrainz5)
-Conflicts:	%{_lib}kcddb4 < 3:4.8.95
-Conflicts:	kde4-audiocd < 3:4.8.95
 
 %description
 KDE4 library for retrieving and sending CDDB information.
 
 %files
-%{_datadir}/config.kcfg/libkcddb.kcfg                                                                  
-%{_datadir}/kde4/services/libkcddb.desktop                                                            
-%doc %{_docdir}/HTML/en/kcontrol/cddbretrieval4
-%{_libdir}/kde4/kcm_cddb.so  
+%{_datadir}/config.kcfg/libkcddb5.kcfg
+%{_datadir}/kservices5/libkcddb.desktop
+%doc %{_docdir}/HTML/en/kcontrol/cddbretrieval5
+%{_libdir}/qt5/plugins/kcm_cddb.so
 
 #------------------------------------------------------------------------------
-%define kcddb_major 4
-%define libkcddb %mklibname kcddb %{kcddb_major}
 
-%package -n %{libkcddb}
-Summary:	%{name} library
-Group:		System/Libraries
-Requires:	%{name} = %{EVRD}
+%define kcddb_major 5
+%define libkcddb %mklibname KF5Cddb %{kcddb_major}
+%define libKF5CddbWidgets  %mklibname KF5CddbWidgets %{kcddb_major}
 
-%description -n %{libkcddb}
-KDE4 library for retrieving and sending CDDB information.
-
-%files -n %{libkcddb}
-%{_libdir}/libkcddb.so.%{kcddb_major}*
+%libpackage KF5Cddb %{kcddb_major}
+%libpackage KF5CddbWidgets %{kcddb_major}
 
 #------------------------------------------------------------------------------
 
@@ -44,31 +46,31 @@ KDE4 library for retrieving and sending CDDB information.
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
 Requires:	%{libkcddb} = %{EVRD}
+Requires:	%{libKF5CddbWidgets} = %{EVRD}
 Conflicts:	kdemultimedia4-devel < 3:4.8.95
 
 %description devel
-KDE4 library for retrieving and sending CDDB information.
+KF5 library for retrieving and sending CDDB information.
 
 This package contains header files needed if you wish to build applications
 based on libkcddb.
 
 %files devel
-%{_libdir}/libkcddb.so                                                                                 
-%{_libdir}/cmake/libkcddb                                                                              
+%{_libdir}/libKF5Cddb.so
+%{_libdir}/libKF5CddbWidgets.so
+%{_libdir}/cmake/KF5Cddb
 %{_includedir}/*                                                                                       
+%{_libdir}/qt5/mkspecs/modules/qt_KCddb.pri
                    
 #------------------------------------------------------------------------------
 
 %prep
 %setup -q
-# fix doc clash with kcddb5
-sed -i 's/cddbretrieval/cddbretrieval4/' kcmcddb/libkcddb.desktop kcmcddb/doc/CMakeLists.txt
 
 %build
-%cmake_kde4 \
-	-DCMAKE_MINIMUM_REQUIRED_VERSION=3.1
-%make
+%cmake_kde5
+%ninja
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
