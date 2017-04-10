@@ -21,6 +21,7 @@ BuildRequires:  cmake(KF5I18n)
 BuildRequires:  cmake(KF5KIO)
 BuildRequires:  cmake(KF5WidgetsAddons)
 BuildRequires:	pkgconfig(libmusicbrainz5)
+%rename	libkcddb5
 
 %description
 KDE4 library for retrieving and sending CDDB information.
