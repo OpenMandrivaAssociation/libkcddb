@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name:		libkcddb
-Summary:	KDE4 library for retrieving and sending CDDB information
+Summary:	KF5 library for retrieving and sending CDDB information
 Version:	16.12.2
 Release:	1
 Epoch:		3
@@ -24,7 +24,7 @@ BuildRequires:	pkgconfig(libmusicbrainz5)
 %rename	libkcddb5
 
 %description
-KDE4 library for retrieving and sending CDDB information.
+KF5 library for retrieving and sending CDDB information.
 
 %files
 %{_datadir}/config.kcfg/libkcddb5.kcfg
