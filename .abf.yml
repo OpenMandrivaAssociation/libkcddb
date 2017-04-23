@@ -1,4 +1,2 @@
-removed_sources:
-  libkcddb-15.08.0.tar.xz: d5ec18d1f100da70b39ed818c2af535ca2665b01
 sources:
-  libkcddb-16.12.2.tar.xz: 290ff059be4d7257ffb101b0030136eeb0b1b910
+  libkcddb-17.04.0.tar.xz: f44b6b25ec107f9750e5ecfa6d2bcad24385c477

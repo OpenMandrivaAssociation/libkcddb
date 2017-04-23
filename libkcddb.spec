@@ -2,7 +2,7 @@
 
 Name:		libkcddb
 Summary:	KF5 library for retrieving and sending CDDB information
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
@@ -26,10 +26,9 @@ BuildRequires:	pkgconfig(libmusicbrainz5)
 %description
 KF5 library for retrieving and sending CDDB information.
 
-%files
+%files -f libkcddb.lang,kcmcddb.lang,kcontrol.lang
 %{_datadir}/config.kcfg/libkcddb5.kcfg
 %{_datadir}/kservices5/libkcddb.desktop
-%doc %{_docdir}/HTML/en/kcontrol/cddbretrieval5
 %{_libdir}/qt5/plugins/kcm_cddb.so
 
 #------------------------------------------------------------------------------
@@ -74,4 +73,6 @@ based on libkcddb.
 
 %install
 %ninja_install -C build
-
+%find_lang libkcddb
+%find_lang kcmcddb
+%find_lang kcontrol --with-html
