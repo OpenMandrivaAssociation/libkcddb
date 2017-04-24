@@ -1,4 +1,4 @@
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 
 Name:		libkcddb
 Summary:	KF5 library for retrieving and sending CDDB information
@@ -8,7 +8,7 @@ Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://projects.kde.org/projects/kde/kdemultimedia/libkcddb
-Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:  cmake
 BuildRequires:  cmake(ECM)
 BuildRequires:  cmake(Qt5Network)
