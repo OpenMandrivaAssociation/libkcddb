@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   libkcddb-17.12.1.tar.xz: b18d681d592f4c9d69a83d276c364afdb5bad32b
+sources:
+  libkcddb-17.12.2.tar.xz: 8fd211bfa3f76aff6f253aa27fe7af05add5d6fe
