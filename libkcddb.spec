@@ -2,7 +2,7 @@
 
 Name:		libkcddb
 Summary:	KF5 library for retrieving and sending CDDB information
-Version:	18.04.3
+Version:	18.07.80
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
