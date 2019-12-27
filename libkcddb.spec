@@ -2,13 +2,13 @@
 
 Name:		libkcddb
 Summary:	KF5 library for retrieving and sending CDDB information
-Version:	19.11.90
+Version:	19.12.0
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://projects.kde.org/projects/kde/kdemultimedia/libkcddb
-Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:  cmake
 BuildRequires:  cmake(ECM)
 BuildRequires:  cmake(Qt5Network)
