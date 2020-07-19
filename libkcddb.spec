@@ -2,7 +2,7 @@
 
 Name:		libkcddb
 Summary:	KF5 library for retrieving and sending CDDB information
-Version:	20.04.3
+Version:	20.07.80
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
@@ -22,6 +22,7 @@ BuildRequires:  cmake(KF5KIO)
 BuildRequires:  cmake(KF5WidgetsAddons)
 BuildRequires:	pkgconfig(libmusicbrainz5)
 %rename	libkcddb5
+Obsoletes:	%{mklibname KF5CddbWidgets 5} < %{EVRD}
 
 %description
 KF5 library for retrieving and sending CDDB information.
@@ -35,10 +36,8 @@ KF5 library for retrieving and sending CDDB information.
 
 %define kcddb_major 5
 %define libkcddb %mklibname KF5Cddb %{kcddb_major}
-%define libKF5CddbWidgets  %mklibname KF5CddbWidgets %{kcddb_major}
 
 %libpackage KF5Cddb %{kcddb_major}
-%libpackage KF5CddbWidgets %{kcddb_major}
 
 #------------------------------------------------------------------------------
 
@@ -46,7 +45,6 @@ KF5 library for retrieving and sending CDDB information.
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
 Requires:	%{libkcddb} = %{EVRD}
-Requires:	%{libKF5CddbWidgets} = %{EVRD}
 Conflicts:	kdemultimedia4-devel < 3:4.8.95
 
 %description devel
@@ -57,7 +55,6 @@ based on libkcddb.
 
 %files devel
 %{_libdir}/libKF5Cddb.so
-%{_libdir}/libKF5CddbWidgets.so
 %{_libdir}/cmake/KF5Cddb
 %{_includedir}/*                                                                                       
 %{_libdir}/qt5/mkspecs/modules/qt_KCddb.pri
