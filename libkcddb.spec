@@ -2,7 +2,7 @@
 
 Name:		libkcddb
 Summary:	KF5 library for retrieving and sending CDDB information
-Version:	20.12.3
+Version:	21.03.80
 Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
@@ -31,6 +31,7 @@ KF5 library for retrieving and sending CDDB information.
 %{_datadir}/config.kcfg/libkcddb5.kcfg
 %{_datadir}/kservices5/libkcddb.desktop
 %{_libdir}/qt5/plugins/kcm_cddb.so
+%{_datadir}/qlogging-categories5/libkcddb.categories
 
 #------------------------------------------------------------------------------
 
