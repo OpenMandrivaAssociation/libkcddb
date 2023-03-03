@@ -36,7 +36,7 @@ KF5 library for retrieving and sending CDDB information.
 #------------------------------------------------------------------------------
 
 %define kcddb_major 5
-%define libkcddb %mklibname KF5Cddb %{kcddb_major}
+%define libkcddb %mklibname KF5Cddb
 
 %libpackage KF5Cddb %{kcddb_major}
 
