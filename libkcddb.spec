@@ -2,8 +2,8 @@
 
 Name:		libkcddb
 Summary:	KF5 library for retrieving and sending CDDB information
-Version:	22.12.3
-Release:	2
+Version:	23.03.90
+Release:	1
 Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPLv2
@@ -28,9 +28,9 @@ Obsoletes:	%{mklibname KF5CddbWidgets 5} < %{EVRD}
 KF5 library for retrieving and sending CDDB information.
 
 %files -f libkcddb.lang -f kcmcddb.lang -f kcontrol.lang
+%{_datadir}/applications/kcm_cddb.desktop
 %{_datadir}/config.kcfg/libkcddb5.kcfg
-%{_datadir}/kservices5/libkcddb.desktop
-%{_libdir}/qt5/plugins/kcm_cddb.so
+%{_libdir}/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_cddb.so
 %{_datadir}/qlogging-categories5/libkcddb.categories
 
 #------------------------------------------------------------------------------
