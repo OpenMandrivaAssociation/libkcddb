@@ -20,6 +20,7 @@ BuildRequires:  cmake(KF5Codecs)
 BuildRequires:  cmake(KF5I18n)
 BuildRequires:  cmake(KF5KIO)
 BuildRequires:  cmake(KF5WidgetsAddons)
+BuildRequires:  cmake(KF5KCMUtils)
 BuildRequires:	pkgconfig(libmusicbrainz5)
 %rename	libkcddb5
 Obsoletes:	%{mklibname KF5CddbWidgets 5} < %{EVRD}
