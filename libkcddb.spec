@@ -5,7 +5,7 @@
 
 Name:		libkcddb
 Summary:	KDE library for retrieving and sending CDDB information
-Version:	25.12.3
+Version:	26.04.0
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2
