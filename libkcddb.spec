@@ -5,7 +5,7 @@
 
 Name:		libkcddb
 Summary:	KDE library for retrieving and sending CDDB information
-Version:	26.04.3
+Version:	26.08.0
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2
@@ -16,6 +16,7 @@ Source0:	https://invent.kde.org/multimedia/libkcddb/-/archive/%{gitbranch}/libkc
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 %endif
 BuildSystem:	cmake
+BuildOption:	-DBUILD_PYTHON_BINDINGS:BOOL=OFF
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 BuildRequires:  cmake(ECM)
 BuildRequires:	pkgconfig(libmusicbrainz5)
